@@ -1,0 +1,8 @@
+github.com/kardianos/hl7 v1.1.2 h1:nOXIyZnnY/jCHq5K/g9cY4vzqRr04lutyrd2PsjdhDw=
+github.com/kardianos/hl7 v1.1.2/go.mod h1:kvrzsCxrjv4L4OFEE/Sk9DKaYofHNo3o4avVUWAKNdA=
+github.com/minerofish/go-hl7 v0.0.8 h1:mzsQjWagon/O9eQzfUxn1Kb5EPfRAJdDoN9lmioS6J8=
+github.com/minerofish/go-hl7 v0.0.8/go.mod h1:+WJAFwXJ+lZAZAKxsDKibcC/tZmN54OLuj/Ln8l5e6Y=
+golang.org/x/text v0.3.7 h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk=
+golang.org/x/text v0.3.7/go.mod h1:u+2+/6zg+i71rQMx5EYifcz6MCKuco9NR6JIITiCfzQ=
+golang.org/x/text v0.16.0 h1:a94ExnEXNtEwYLGJSIUxnWoxoRz/ZcCsV63ROupILh4=
+golang.org/x/text v0.16.0/go.mod h1:GhwF1Be+LQoKShO3cGOHzqOgRrGaYc9AvblQOmPVHnI=
