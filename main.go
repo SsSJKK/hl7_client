@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
@@ -9,6 +10,9 @@ import (
 	"net"
 	"os"
 	"time"
+
+	"github.com/kardianos/hl7"
+	"github.com/kardianos/hl7/h231"
 )
 
 var (
@@ -25,6 +29,8 @@ func init() {
 	}
 	logging = *slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
 		Level: slog.LevelDebug,
+		// AddSource: true,
+		
 	}))
 }
 
@@ -33,7 +39,10 @@ func main() {
 	case "server":
 		server()
 	case "client":
-		client()
+		for {
+			client()
+			<-time.After(time.Second * 10)
+		}
 	default:
 		fmt.Println("type is invalid")
 	}
@@ -43,14 +52,14 @@ func server() {
 	logging.Debug("Server is listening on port 5100")
 	listener, err := net.Listen("tcp", "0.0.0.0:5100")
 	if err != nil {
-		logging.Error("Error:", err)
+		logging.Error("Error:", slog.String("->", err.Error()))
 		return
 	}
 	defer listener.Close()
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
-			logging.Error("Error:", err)
+			logging.Error("Error:", slog.String("->", err.Error()))
 			continue
 		}
 		go handleClient(conn)
@@ -66,14 +75,14 @@ func handleClient(conn net.Conn) {
 
 	data, err := io.ReadAll(conn)
 	if err != nil {
-		logging.Error("Error:", err)
+		logging.Error("Error:", slog.String("->", err.Error()))
 		return
 	}
 	logging.Debug("Received data length:", slog.Int("->", len(data)))
 	logging.Debug("Writing data to file")
 	f, err := os.OpenFile(fmt.Sprintf("%d.log", time.Now().Unix()), os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
-		logging.Error("Error:", err)
+		logging.Error("Error:", slog.String("->", err.Error()))
 		return
 	}
 	defer func() {
@@ -84,9 +93,9 @@ func handleClient(conn net.Conn) {
 }
 
 func client() {
-	conn, err := net.Dial("tcp", "192.168.10.2:5100")
+	conn, err := net.Dial("tcp", "192.168.0.2:5100")
 	if err != nil {
-		fmt.Println("Error:", err)
+		logging.Error("Error:", slog.String("->", err.Error()))
 		return
 	}
 	defer conn.Close()
@@ -98,23 +107,51 @@ func client() {
 	// 	fmt.Println("Error writing:", err)
 	// 	return
 	// }
-	buffer := make([]byte, 1024)
+	buffer := make([]byte, 1024*1024)
 	for {
 		n, err := conn.Read(buffer)
 		if err != nil {
-			logging.Error("Error", err)
+			logging.Error("Error:", slog.String("->", err.Error()))
 			return
 		}
 		if bytes.Equal(buffer[:n], []byte{2}) {
 			continue
 		}
 
-		data := string(buffer[:n])
-		// if data == "0" {
-		// 	continue
-		// }
-		// sd := strings.Split(data, "\n\n")
-		// fmt.Println("->", buffer[:n])
-		fmt.Println("->", data)
+		decoder(buffer[:n])
 	}
+}
+
+func decoder(data []byte) {
+	hl7Decoder := hl7.NewDecoder(h231.Registry, nil)
+	ind := bytes.Index(data, []byte("MSH"))
+	if ind == -1 {
+		logging.Debug("Data is not HL7")
+		return
+	}
+	lind := bytes.LastIndex(data, []byte("\r\x1c\r"))
+	if lind == -1 {
+		logging.Debug("Data is not HL7")
+		return
+	}
+	data = data[ind:lind]
+	// fmt.Printf("data: %s\n", data) //
+	// parceData, err := hl7Decoder.Decode(data)
+	logging.Debug("Data:", slog.String("->", string(data)))
+	parceData, err := hl7Decoder.Decode(data)
+	if err != nil {
+		logging.Debug("sdata:", slog.String("->", string(data)))
+		logging.Error("Error:", slog.String("->", err.Error()))
+		return
+	}
+	// _ = parceData
+
+	// fmt.Printf("err: %+v\n", err)/
+	jData, err := json.Marshal(parceData)
+	if err != nil {
+		logging.Error("Error:", slog.String("->", err.Error()))
+		return
+	}
+	logging.Debug("JSON data:", slog.Any("->", jData))
+
 }
