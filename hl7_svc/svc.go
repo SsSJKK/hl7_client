@@ -89,8 +89,19 @@ type Object struct {
 					IdentifierTypeCode string      `json:"IdentifierTypeCode"`
 					AssigningFacility  interface{} `json:"AssigningFacility"`
 				} `json:"PatientIdentifierList"`
-				AlternatePatientID          interface{} `json:"AlternatePatientID"`
-				PatientName                 interface{} `json:"PatientName"`
+				AlternatePatientID interface{} `json:"AlternatePatientID"`
+				PatientName        []struct {
+					HL7 struct {
+					} `json:"HL7"`
+					FamilyNameLastNamePrefix string `json:"FamilyNameLastNamePrefix"`
+					GivenName                string `json:"GivenName"`
+					MiddleInitialOrName      string `json:"MiddleInitialOrName"`
+					Suffix                   string `json:"Suffix"`
+					Prefix                   string `json:"Prefix"`
+					Degree                   string `json:"Degree"`
+					NameTypeCode             string `json:"NameTypeCode"`
+					NameRepresentationCode   string `json:"NameRepresentationCode"`
+				} `json:"PatientName"`
 				MotherSMaidenName           interface{} `json:"MotherSMaidenName"`
 				DateTimeOfBirth             time.Time   `json:"DateTimeOfBirth"`
 				Sex                         string      `json:"Sex"`

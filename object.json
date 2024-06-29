@@ -8,7 +8,7 @@
     "SendingFacility": null,
     "ReceivingApplication": null,
     "ReceivingFacility": null,
-    "DateTimeOfMessage": "2024-06-26T01:21:43Z",
+    "DateTimeOfMessage": "2024-06-28T20:00:26Z",
     "Security": "",
     "MessageType": {
       "HL7": {},
@@ -16,7 +16,7 @@
       "TriggerEvent": "R01",
       "MessageStructure": ""
     },
-    "MessageControlID": "1",
+    "MessageControlID": "5",
     "ProcessingID": {
       "HL7": {},
       "ProcessingID": "P",
@@ -59,7 +59,7 @@
           "PatientIdentifierList": [
             {
               "HL7": {},
-              "ID": "",
+              "ID": "ppid",
               "CheckDigit": "",
               "CodeIdentifyingTheCheckDigitSchemeEmployed": "",
               "AssigningAuthority": {
@@ -73,10 +73,22 @@
             }
           ],
           "AlternatePatientID": null,
-          "PatientName": null,
+          "PatientName": [
+            {
+              "HL7": {},
+              "FamilyNameLastNamePrefix": "фамишия",
+              "GivenName": "имя",
+              "MiddleInitialOrName": "",
+              "Suffix": "",
+              "Prefix": "",
+              "Degree": "",
+              "NameTypeCode": "",
+              "NameRepresentationCode": ""
+            }
+          ],
           "MotherSMaidenName": null,
           "DateTimeOfBirth": "0001-01-01T00:00:00Z",
-          "Sex": "",
+          "Sex": "Муж",
           "PatientAlias": null,
           "Race": null,
           "PatientAddress": null,
@@ -108,8 +120,19 @@
           "PV1": {
             "HL7": {},
             "SetID": "1",
-            "PatientClass": "",
-            "AssignedPatientLocation": null,
+            "PatientClass": "Амбул. больной",
+            "AssignedPatientLocation": {
+              "HL7": {},
+              "PointOfCare": "",
+              "Room": "",
+              "Bed": "место",
+              "Facility": null,
+              "LocationStatus": "",
+              "PersonLocationType": "",
+              "Building": "",
+              "Floor": "",
+              "LocationDescription": ""
+            },
             "AdmissionType": "",
             "PreadmitNumber": null,
             "PriorPatientLocation": null,
@@ -173,7 +196,7 @@
             "PlacerOrderNumber": null,
             "FillerOrderNumber": {
               "HL7": {},
-              "EntityIdentifier": "1",
+              "EntityIdentifier": "4",
               "NamespaceID": "",
               "UniversalID": "",
               "UniversalIDType": ""
@@ -188,15 +211,15 @@
               "NameOfAlternateCodingSystem": ""
             },
             "Priority": "",
-            "RequestedDateTime": "0001-01-01T00:00:00Z",
-            "ObservationDateTime": "2024-06-20T15:06:48Z",
+            "RequestedDateTime": "2024-05-26T12:34:00Z",
+            "ObservationDateTime": "2024-05-29T13:33:28Z",
             "ObservationEndDateTime": "0001-01-01T00:00:00Z",
             "CollectionVolume": null,
             "CollectorIdentifier": null,
             "SpecimenActionCode": "",
             "DangerCode": null,
             "RelevantClinicalInfo": "",
-            "SpecimenReceivedDateTime": "0001-01-01T00:00:00Z",
+            "SpecimenReceivedDateTime": "2024-05-26T12:45:00Z",
             "SpecimenSource": null,
             "OrderingProvider": null,
             "OrderCallbackPhoneNumber": null,
@@ -374,7 +397,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "Общая"
+                  "Взрос.муж"
                 ],
                 "Units": null,
                 "ReferencesRange": "",
@@ -399,8 +422,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "6690-2",
-                  "Text": "WBC",
+                  "Identifier": "30525-0",
+                  "Text": "Age",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -408,22 +431,19 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "12.82"
+                  "66"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "10*9/L",
+                  "Identifier": "yr",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "4.00-10.00",
-                "AbnormalFlags": [
-                  "H",
-                  "N"
-                ],
+                "ReferencesRange": "",
+                "AbnormalFlags": null,
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
                 "ObservationResultStatus": "F",
@@ -441,6 +461,84 @@
               "OBX": {
                 "HL7": {},
                 "SetID": "6",
+                "ValueType": "ST",
+                "ObservationIdentifier": {
+                  "HL7": {},
+                  "Identifier": "01001",
+                  "Text": "Remark",
+                  "NameOfCodingSystem": "99MRC",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ObservationSubID": "",
+                "ObservationValue": [
+                  "комменнт"
+                ],
+                "Units": null,
+                "ReferencesRange": "",
+                "AbnormalFlags": null,
+                "Probability": null,
+                "NatureOfAbnormalTest": null,
+                "ObservationResultStatus": "F",
+                "DateLastObsNormalValues": "0001-01-01T00:00:00Z",
+                "UserDefinedAccessChecks": "",
+                "DateTimeOfTheObservation": "0001-01-01T00:00:00Z",
+                "ProducersID": null,
+                "ResponsibleObserver": null,
+                "ObservationMethod": null
+              },
+              "NTE": null
+            },
+            {
+              "HL7": {},
+              "OBX": {
+                "HL7": {},
+                "SetID": "7",
+                "ValueType": "NM",
+                "ObservationIdentifier": {
+                  "HL7": {},
+                  "Identifier": "6690-2",
+                  "Text": "WBC",
+                  "NameOfCodingSystem": "LN",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ObservationSubID": "",
+                "ObservationValue": [
+                  "6.27"
+                ],
+                "Units": {
+                  "HL7": {},
+                  "Identifier": "10*9/L",
+                  "Text": "",
+                  "NameOfCodingSystem": "",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ReferencesRange": "4.00-10.00",
+                "AbnormalFlags": [
+                  "A"
+                ],
+                "Probability": null,
+                "NatureOfAbnormalTest": null,
+                "ObservationResultStatus": "F",
+                "DateLastObsNormalValues": "0001-01-01T00:00:00Z",
+                "UserDefinedAccessChecks": "",
+                "DateTimeOfTheObservation": "0001-01-01T00:00:00Z",
+                "ProducersID": null,
+                "ResponsibleObserver": null,
+                "ObservationMethod": null
+              },
+              "NTE": null
+            },
+            {
+              "HL7": {},
+              "OBX": {
+                "HL7": {},
+                "SetID": "8",
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
@@ -466,96 +564,7 @@
                 },
                 "ReferencesRange": "0.00-0.10",
                 "AbnormalFlags": [
-                  "N"
-                ],
-                "Probability": null,
-                "NatureOfAbnormalTest": null,
-                "ObservationResultStatus": "F",
-                "DateLastObsNormalValues": "0001-01-01T00:00:00Z",
-                "UserDefinedAccessChecks": "",
-                "DateTimeOfTheObservation": "0001-01-01T00:00:00Z",
-                "ProducersID": null,
-                "ResponsibleObserver": null,
-                "ObservationMethod": null
-              },
-              "NTE": null
-            },
-            {
-              "HL7": {},
-              "OBX": {
-                "HL7": {},
-                "SetID": "7",
-                "ValueType": "NM",
-                "ObservationIdentifier": {
-                  "HL7": {},
-                  "Identifier": "706-2",
-                  "Text": "BAS%",
-                  "NameOfCodingSystem": "LN",
-                  "AlternateComponents": "",
-                  "AlternateText": "",
-                  "NameOfAlternateCodingSystem": ""
-                },
-                "ObservationSubID": "",
-                "ObservationValue": [
-                  "0.1"
-                ],
-                "Units": {
-                  "HL7": {},
-                  "Identifier": "%",
-                  "Text": "",
-                  "NameOfCodingSystem": "",
-                  "AlternateComponents": "",
-                  "AlternateText": "",
-                  "NameOfAlternateCodingSystem": ""
-                },
-                "ReferencesRange": "0.0-1.0",
-                "AbnormalFlags": [
-                  "N"
-                ],
-                "Probability": null,
-                "NatureOfAbnormalTest": null,
-                "ObservationResultStatus": "F",
-                "DateLastObsNormalValues": "0001-01-01T00:00:00Z",
-                "UserDefinedAccessChecks": "",
-                "DateTimeOfTheObservation": "0001-01-01T00:00:00Z",
-                "ProducersID": null,
-                "ResponsibleObserver": null,
-                "ObservationMethod": null
-              },
-              "NTE": null
-            },
-            {
-              "HL7": {},
-              "OBX": {
-                "HL7": {},
-                "SetID": "8",
-                "ValueType": "NM",
-                "ObservationIdentifier": {
-                  "HL7": {},
-                  "Identifier": "751-8",
-                  "Text": "NEU#",
-                  "NameOfCodingSystem": "LN",
-                  "AlternateComponents": "",
-                  "AlternateText": "",
-                  "NameOfAlternateCodingSystem": ""
-                },
-                "ObservationSubID": "",
-                "ObservationValue": [
-                  "8.58"
-                ],
-                "Units": {
-                  "HL7": {},
-                  "Identifier": "10*9/L",
-                  "Text": "",
-                  "NameOfCodingSystem": "",
-                  "AlternateComponents": "",
-                  "AlternateText": "",
-                  "NameOfAlternateCodingSystem": ""
-                },
-                "ReferencesRange": "2.00-7.00",
-                "AbnormalFlags": [
-                  "H",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -577,8 +586,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "770-8",
-                  "Text": "NEU%",
+                  "Identifier": "706-2",
+                  "Text": "BAS%",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -586,7 +595,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "66.9"
+                  "0.3"
                 ],
                 "Units": {
                   "HL7": {},
@@ -597,9 +606,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "50.0-70.0",
+                "ReferencesRange": "0.0-1.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -621,8 +630,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "711-2",
-                  "Text": "EOS#",
+                  "Identifier": "751-8",
+                  "Text": "NEU#",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -630,7 +639,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "0.33"
+                  "3.94"
                 ],
                 "Units": {
                   "HL7": {},
@@ -641,9 +650,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "0.02-0.50",
+                "ReferencesRange": "2.00-7.00",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -665,8 +674,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "713-8",
-                  "Text": "EOS%",
+                  "Identifier": "770-8",
+                  "Text": "NEU%",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -674,7 +683,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "2.6"
+                  "62.8"
                 ],
                 "Units": {
                   "HL7": {},
@@ -685,9 +694,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "0.5-5.0",
+                "ReferencesRange": "50.0-70.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -709,8 +718,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "731-0",
-                  "Text": "LYM#",
+                  "Identifier": "711-2",
+                  "Text": "EOS#",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -718,7 +727,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "3.17"
+                  "0.39"
                 ],
                 "Units": {
                   "HL7": {},
@@ -729,9 +738,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "0.80-4.00",
+                "ReferencesRange": "0.02-0.50",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -753,8 +762,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "736-9",
-                  "Text": "LYM%",
+                  "Identifier": "713-8",
+                  "Text": "EOS%",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -762,7 +771,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "24.8"
+                  "6.1"
                 ],
                 "Units": {
                   "HL7": {},
@@ -773,9 +782,10 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "20.0-40.0",
+                "ReferencesRange": "0.5-5.0",
                 "AbnormalFlags": [
-                  "N"
+                  "H",
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -797,8 +807,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "742-7",
-                  "Text": "MON#",
+                  "Identifier": "731-0",
+                  "Text": "LYM#",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -806,7 +816,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "0.72"
+                  "1.61"
                 ],
                 "Units": {
                   "HL7": {},
@@ -817,9 +827,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "0.12-1.20",
+                "ReferencesRange": "0.80-4.00",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -841,8 +851,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "5905-5",
-                  "Text": "MON%",
+                  "Identifier": "736-9",
+                  "Text": "LYM%",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -850,7 +860,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "5.6"
+                  "25.7"
                 ],
                 "Units": {
                   "HL7": {},
@@ -861,9 +871,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "3.0-12.0",
+                "ReferencesRange": "20.0-40.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -885,8 +895,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "789-8",
-                  "Text": "RBC",
+                  "Identifier": "742-7",
+                  "Text": "MON#",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -894,21 +904,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "5.99"
+                  "0.31"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "10*12/L",
+                  "Identifier": "10*9/L",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "3.50-5.50",
+                "ReferencesRange": "0.12-1.20",
                 "AbnormalFlags": [
-                  "H",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -930,8 +939,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "718-7",
-                  "Text": "HGB",
+                  "Identifier": "5905-5",
+                  "Text": "MON%",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -939,20 +948,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "114"
+                  "5.1"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "g/L",
+                  "Identifier": "%",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "110-160",
+                "ReferencesRange": "3.0-12.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -974,8 +983,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "787-2",
-                  "Text": "MCV",
+                  "Identifier": "789-8",
+                  "Text": "RBC",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -983,21 +992,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "59.2"
+                  "4.35"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "fL",
+                  "Identifier": "10*12/L",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "80.0-100.0",
+                "ReferencesRange": "4.00-5.50",
                 "AbnormalFlags": [
-                  "L",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1019,8 +1027,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "785-6",
-                  "Text": "MCH",
+                  "Identifier": "718-7",
+                  "Text": "HGB",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1028,21 +1036,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "19.1"
+                  "125"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "pg",
+                  "Identifier": "g/L",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "27.0-34.0",
+                "ReferencesRange": "120-160",
                 "AbnormalFlags": [
-                  "L",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1064,8 +1071,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "786-4",
-                  "Text": "MCHC",
+                  "Identifier": "787-2",
+                  "Text": "MCV",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1073,20 +1080,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "322"
+                  "84.4"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "g/L",
+                  "Identifier": "fL",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "320-360",
+                "ReferencesRange": "80.0-100.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1108,8 +1115,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "788-0",
-                  "Text": "RDW-CV",
+                  "Identifier": "785-6",
+                  "Text": "MCH",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1117,20 +1124,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "14.8"
+                  "28.6"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "%",
+                  "Identifier": "pg",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "11.0-16.0",
+                "ReferencesRange": "27.0-34.0",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1152,8 +1159,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "21000-5",
-                  "Text": "RDW-SD",
+                  "Identifier": "786-4",
+                  "Text": "MCHC",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1161,21 +1168,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "34.1"
+                  "339"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "fL",
+                  "Identifier": "g/L",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "35.0-56.0",
+                "ReferencesRange": "320-360",
                 "AbnormalFlags": [
-                  "L",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1197,8 +1203,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "4544-3",
-                  "Text": "HCT",
+                  "Identifier": "788-0",
+                  "Text": "RDW-CV",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1206,7 +1212,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "35.5"
+                  "12.5"
                 ],
                 "Units": {
                   "HL7": {},
@@ -1217,10 +1223,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "37.0-54.0",
+                "ReferencesRange": "11.0-16.0",
                 "AbnormalFlags": [
-                  "L",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1242,8 +1247,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "777-3",
-                  "Text": "PLT",
+                  "Identifier": "21000-5",
+                  "Text": "RDW-SD",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1251,21 +1256,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "477"
+                  "41.7"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "10*9/L",
+                  "Identifier": "fL",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "100-300",
+                "ReferencesRange": "35.0-56.0",
                 "AbnormalFlags": [
-                  "H",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1287,8 +1291,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "32623-1",
-                  "Text": "MPV",
+                  "Identifier": "4544-3",
+                  "Text": "HCT",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1296,20 +1300,21 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "8.8"
+                  "36.8"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "fL",
+                  "Identifier": "%",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "7.0-11.0",
+                "ReferencesRange": "40.0-54.0",
                 "AbnormalFlags": [
-                  "N"
+                  "L",
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1331,8 +1336,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "32207-3",
-                  "Text": "PDW",
+                  "Identifier": "777-3",
+                  "Text": "PLT",
                   "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1340,12 +1345,20 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "15.6"
+                  "259"
                 ],
-                "Units": null,
-                "ReferencesRange": "9.0-17.0",
+                "Units": {
+                  "HL7": {},
+                  "Identifier": "10*9/L",
+                  "Text": "",
+                  "NameOfCodingSystem": "",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ReferencesRange": "100-300",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1367,30 +1380,29 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "10002",
-                  "Text": "PCT",
-                  "NameOfCodingSystem": "99MRC",
+                  "Identifier": "32623-1",
+                  "Text": "MPV",
+                  "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "0.421"
+                  "9.0"
                 ],
                 "Units": {
                   "HL7": {},
-                  "Identifier": "%",
+                  "Identifier": "fL",
                   "Text": "",
                   "NameOfCodingSystem": "",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "0.108-0.282",
+                "ReferencesRange": "6.5-12.0",
                 "AbnormalFlags": [
-                  "H",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1412,30 +1424,21 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "10013",
-                  "Text": "PLCC",
-                  "NameOfCodingSystem": "99MRC",
+                  "Identifier": "32207-3",
+                  "Text": "PDW",
+                  "NameOfCodingSystem": "LN",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "101"
+                  "15.9"
                 ],
-                "Units": {
-                  "HL7": {},
-                  "Identifier": "10*9/L",
-                  "Text": "",
-                  "NameOfCodingSystem": "",
-                  "AlternateComponents": "",
-                  "AlternateText": "",
-                  "NameOfAlternateCodingSystem": ""
-                },
-                "ReferencesRange": "30-90",
+                "Units": null,
+                "ReferencesRange": "9.0-17.0",
                 "AbnormalFlags": [
-                  "H",
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1457,8 +1460,8 @@
                 "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "10014",
-                  "Text": "PLCR",
+                  "Identifier": "10002",
+                  "Text": "PCT",
                   "NameOfCodingSystem": "99MRC",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1466,7 +1469,7 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "21.2"
+                  "0.234"
                 ],
                 "Units": {
                   "HL7": {},
@@ -1477,9 +1480,9 @@
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
-                "ReferencesRange": "11.0-45.0",
+                "ReferencesRange": "0.108-0.282",
                 "AbnormalFlags": [
-                  "N"
+                  "A"
                 ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
@@ -1498,11 +1501,11 @@
               "OBX": {
                 "HL7": {},
                 "SetID": "30",
-                "ValueType": "IS",
+                "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "12013",
-                  "Text": "RBC Abnormal distribution",
+                  "Identifier": "10013",
+                  "Text": "PLCC",
                   "NameOfCodingSystem": "99MRC",
                   "AlternateComponents": "",
                   "AlternateText": "",
@@ -1510,11 +1513,21 @@
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "T"
+                  "52"
                 ],
-                "Units": null,
-                "ReferencesRange": "",
-                "AbnormalFlags": null,
+                "Units": {
+                  "HL7": {},
+                  "Identifier": "10*9/L",
+                  "Text": "",
+                  "NameOfCodingSystem": "",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ReferencesRange": "30-90",
+                "AbnormalFlags": [
+                  "A"
+                ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
                 "ObservationResultStatus": "F",
@@ -1532,23 +1545,33 @@
               "OBX": {
                 "HL7": {},
                 "SetID": "31",
-                "ValueType": "IS",
+                "ValueType": "NM",
                 "ObservationIdentifier": {
                   "HL7": {},
-                  "Identifier": "15199-3",
-                  "Text": "Microcytes",
-                  "NameOfCodingSystem": "LN",
+                  "Identifier": "10014",
+                  "Text": "PLCR",
+                  "NameOfCodingSystem": "99MRC",
                   "AlternateComponents": "",
                   "AlternateText": "",
                   "NameOfAlternateCodingSystem": ""
                 },
                 "ObservationSubID": "",
                 "ObservationValue": [
-                  "T"
+                  "20.2"
                 ],
-                "Units": null,
-                "ReferencesRange": "",
-                "AbnormalFlags": null,
+                "Units": {
+                  "HL7": {},
+                  "Identifier": "%",
+                  "Text": "",
+                  "NameOfCodingSystem": "",
+                  "AlternateComponents": "",
+                  "AlternateText": "",
+                  "NameOfAlternateCodingSystem": ""
+                },
+                "ReferencesRange": "11.0-45.0",
+                "AbnormalFlags": [
+                  "A"
+                ],
                 "Probability": null,
                 "NatureOfAbnormalTest": null,
                 "ObservationResultStatus": "F",
@@ -1568,8 +1591,4 @@
     }
   ],
   "DSC": null
-},
-{HL7: {} SetID: 1 ValueType:IS ObservationIdentifier: {HL7: {} Identifier: 08001 Text:Take Mode NameOfCodingSystem: 99MRC AlternateComponents: AlternateText: NameOfAlternateCodingSystem:
-  } ObservationSubID: ObservationValue: [O
-  ] Units:<nil> ReferencesRange: AbnormalFlags:<nil> Probability:<nil> NatureOfAbnormalTest:<nil> ObservationResultStatus:F DateLastObsNormalValues: 0001-01-01 00: 00: 00 +0000 UTC UserDefinedAccessChecks: DateTimeOfTheObservation: 0001-01-01 00: 00: 00 +0000 UTC ProducersID:<nil> ResponsibleObserver:<nil> ObservationMethod:<nil>
 }

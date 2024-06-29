@@ -68,13 +68,48 @@ func TestH(t *testing.T) {
 	}
 	// fmt.Printf("ob: %+v\n", ob)
 	// ob.PatientResult[0].OrderObservation[0].Observation[0].OBX
+	vals := make(map[string]string)
 	for _, v := range ob.PatientResult {
+		vals["PV1"] = v.Patient.Visit.PV1.SetID
 		for _, v := range v.OrderObservation {
+			vals["DATE"] = v.OBR.ObservationDateTime.Format("02-01-2006")
+			vals["TIME"] = v.OBR.ObservationDateTime.Format("15:04")
 			for _, v := range v.Observation {
-				// fmt.Printf("v.OBX: %+v\n", v.OBX)
-				fmt.Printf("v.OBX.ObservationIdentifier.Text: %v -> ", v.OBX.ObservationIdentifier.Text)
-				fmt.Printf("%v\n", v.OBX.ObservationValue[0])
+				vals[v.OBX.ObservationIdentifier.Text] = fmt.Sprintf("%v", v.OBX.ObservationValue[0])
 			}
 		}
 	}
+	// fmt.Printf("vals: %v\n", vals)
+	fmt.Printf("%s,,,WB-CD,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,,,%s,,,,,,,,,,,,,,,,,,\n",
+		vals["PV1"],
+		vals["DATE"],
+		vals["TIME"],
+		vals["WBC"],
+		vals["NEU#"],
+		vals["LYM#"],
+		vals["MON#"],
+		vals["EOS#"],
+		vals["BAS#"],
+		vals["NEU%"],
+		vals["LYM%"],
+		vals["MON%"],
+		vals["EOS%"],
+		vals["BAS%"],
+		vals["RBC"],
+		vals["HGB"],
+		vals["HCT"],
+		vals["MCV"],
+		vals["MCH"],
+		vals["MCHC"],
+		vals["RDW-CV"],
+		vals["RDW-SD"],
+		vals["PLT"],
+		vals["MPV"],
+		vals["PDW"],
+		vals["PCT"],
+		vals["PLCC"],
+		vals["PLCR"],
+		vals["Ref Group"],
+	)
+	_ = vals["0000"]
 }

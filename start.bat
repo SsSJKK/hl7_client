@@ -1,0 +1,1 @@
+main.exe --type client --host 192.168.0.2:5100 > logfile
