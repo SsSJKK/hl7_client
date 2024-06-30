@@ -1,2 +1,4 @@
 *.exe
 logfile
+*rar
+*csv
