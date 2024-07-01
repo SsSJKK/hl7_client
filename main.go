@@ -55,6 +55,7 @@ OBX|19|NM|10027^MID#^99MRC||0.6|10*9/L|0.1-1.5|N|||F
 OBX|20|NM|10029^MID%^99MRC||10.6|%|3.0-15.0|N|||F
 OBX|21|NM|10028^GRAN#^99MRC||2.2|10*9/L|2.0-7.0|N|||F
 OBX|22|NM|10030^GRAN%^99MRC||41.1|%|50.0-70.0|L~N|||F`
+
 // var vsdata = `MSH|^~\\&|||||20240628210706||ORU^R01|804|P|2.3.1||||||UNICODE
 // PID|1||ppid^^^^MR||фамишия^имя|||Муж
 // PV1|1|Амбул. больной|^^место
@@ -102,7 +103,7 @@ func newStorFile() (*StorFile, error) {
 		logging.Error("Error:", slog.String("->", err.Error()))
 		return nil, err
 	}
-	f.WriteString(header)
+	f.WriteString(header + "\r\n")
 	return &StorFile{
 		F:     f,
 		Close: false,
@@ -392,6 +393,6 @@ func writeToFile(vals map[string]string) {
 			return
 		}
 	}
-	fileStore.F.Write([]byte("\r\n"))
 	fileStore.F.Write([]byte(data))
+	fileStore.F.Write([]byte("\r\n"))
 }
